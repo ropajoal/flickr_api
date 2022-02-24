@@ -1,0 +1,14 @@
+<section>
+<%= form_with url: "/static_pages", method: :get do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.submit "Search Photos" %>
+<% end %>
+</section>
+<% if params[:username] %>
+  <section>
+    <% @links.each do |link| %>
+      <img src ="<%= link %>" />
+    <% end %>
+  </section>
+<% end %>  
